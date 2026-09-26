@@ -19,7 +19,7 @@
 /datum/sex_action/nipple_sex/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s nipple."))
-	playsound(target, pick(SEXCON_SOUNDS_WET_PLAP + SEXCON_SOUNDS_SQUELCH), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_SQUELCH), 30, TRUE, 5, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())

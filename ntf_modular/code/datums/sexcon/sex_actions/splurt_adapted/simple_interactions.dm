@@ -340,6 +340,7 @@
 /datum/sex_action/simple_interaction/mount_face
 	name = "Mount Face"
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_UNDER_SMOTHER
 	start_message = "%USER% lowers %USER_THEIR% hips over %TARGET%'s face."
 	perform_message = "%USER% grinds against %TARGET%'s face."
 	finish_message = "%USER% climbs off %TARGET%'s face."
@@ -401,7 +402,7 @@
 	name = "Breast Smother"
 	require_user_breasts = TRUE
 	continous = TRUE
-	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/DryFlop2.ogg', 'ntf_modular/sound/interactions/DryFlop3.ogg', 'ntf_modular/sound/interactions/squelch1.ogg')
+	perform_sounds = list('ntf_modular/sound/interactions/squelch1.ogg', 'ntf_modular/sound/interactions/squelch2.ogg', 'ntf_modular/sound/interactions/under_moan_f1.ogg', 'ntf_modular/sound/interactions/under_moan_f2.ogg')
 	start_message = "%USER% presses %USER_THEIR% breasts against %TARGET%'s face."
 	perform_message = "%USER% smothers %TARGET% with %USER_THEIR% breasts."
 	finish_message = "%USER% pulls away from %TARGET%'s face."
@@ -411,7 +412,7 @@
 /datum/sex_action/simple_interaction/butt_smother
 	name = "Butt Smother"
 	continous = TRUE
-	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/DryFlop2.ogg', 'ntf_modular/sound/interactions/DryFlop3.ogg', 'ntf_modular/sound/interactions/DryFlop4.ogg')
+	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/under_moan_f1.ogg', 'ntf_modular/sound/interactions/under_moan_f2.ogg', 'ntf_modular/sound/interactions/under_moan_f3.ogg')
 	start_message = "%USER% presses %USER_THEIR% ass against %TARGET%'s face."
 	perform_message = "%USER% smothers %TARGET% with %USER_THEIR% ass."
 	finish_message = "%USER% pulls away from %TARGET%'s face."
@@ -439,7 +440,7 @@
 	name = "Facefuck (Vagina)"
 	require_user_vagina = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_SOUNDS_WET_PLAP
+	perform_sounds = SEXCON_SOUNDS_ORAL_LICK
 	start_message = "%USER% pushes %USER_THEIR% pussy against %TARGET%'s mouth."
 	perform_message = "%USER% grinds %USER_THEIR% pussy against %TARGET%'s mouth."
 	finish_message = "%USER% pulls away from %TARGET%'s mouth."

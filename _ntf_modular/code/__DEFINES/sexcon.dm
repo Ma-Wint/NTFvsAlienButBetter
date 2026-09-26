@@ -100,6 +100,15 @@
 	'ntf_modular/sound/interactions/WetPlap10.ogg' \
 )
 
+#define SEXCON_SOUNDS_RIDE_BANG list( \
+	'ntf_modular/sound/interactions/bang1.ogg', \
+	'ntf_modular/sound/interactions/bang2.ogg', \
+	'ntf_modular/sound/interactions/bang3.ogg', \
+	'ntf_modular/sound/interactions/bang4.ogg', \
+	'ntf_modular/sound/interactions/bang5.ogg', \
+	'ntf_modular/sound/interactions/bang6.ogg' \
+)
+
 #define SEXCON_SOUNDS_DRY_FLOP_QUICK list( \
 	'ntf_modular/sound/interactions/DryFlopQuick1.ogg', \
 	'ntf_modular/sound/interactions/DryFlopQuick2.ogg', \
@@ -132,9 +141,29 @@
 	'ntf_modular/sound/interactions/bj11.ogg' \
 )
 
-#define SEXCON_SOUNDS_ORAL list( \
+#define SEXCON_SOUNDS_ORAL_LICK list( \
 	'ntf_modular/sound/interactions/oral1.ogg', \
 	'ntf_modular/sound/interactions/oral2.ogg' \
+)
+
+#define SEXCON_SOUNDS_MOUTH_SUCK_FEMALE list( \
+	'ntf_modular/sound/misc/mat/girlmouth (1).ogg', \
+	'ntf_modular/sound/misc/mat/girlmouth (2).ogg', \
+	'ntf_modular/sound/interactions/girlmouth (1).ogg', \
+	'ntf_modular/sound/interactions/girlmouth (2).ogg' \
+)
+
+#define SEXCON_SOUNDS_MOUTH_SUCK_MALE list( \
+	'ntf_modular/sound/misc/mat/guymouth (1).ogg', \
+	'ntf_modular/sound/misc/mat/guymouth (2).ogg', \
+	'ntf_modular/sound/misc/mat/guymouth (3).ogg', \
+	'ntf_modular/sound/misc/mat/guymouth (4).ogg', \
+	'ntf_modular/sound/misc/mat/guymouth (5).ogg', \
+	'ntf_modular/sound/interactions/guymouth (1).ogg', \
+	'ntf_modular/sound/interactions/guymouth (2).ogg', \
+	'ntf_modular/sound/interactions/guymouth (3).ogg', \
+	'ntf_modular/sound/interactions/guymouth (4).ogg', \
+	'ntf_modular/sound/interactions/guymouth (5).ogg' \
 )
 
 #define SEXCON_SOUNDS_FAP list( \
@@ -158,7 +187,17 @@
 	'ntf_modular/sound/interactions/fingering10.ogg', \
 	'ntf_modular/sound/interactions/fingering11.ogg', \
 	'ntf_modular/sound/interactions/fingering12.ogg', \
-	'ntf_modular/sound/interactions/fingering13.ogg', \
+	'ntf_modular/sound/interactions/fingering13.ogg' \
+)
+
+#define SEXCON_SOUNDS_ANUS_FINGERING list( \
+	'ntf_modular/sound/interactions/crapjob.ogg', \
+	'ntf_modular/sound/interactions/crapjob1.ogg' \
+)
+
+#define SEXCON_SOUNDS_SCISSORING list( \
+	'ntf_modular/sound/interactions/champ1.ogg', \
+	'ntf_modular/sound/interactions/champ2.ogg', \
 	'ntf_modular/sound/interactions/champ_fingering.ogg' \
 )
 
@@ -175,7 +214,7 @@
 	'ntf_modular/sound/interactions/foot_dry4.ogg' \
 )
 
-#define SEXCON_SOUNDS_FOOT_WET list( \
+#define SEXCON_SOUNDS_THIGH list( \
 	'ntf_modular/sound/interactions/foot_wet1.ogg', \
 	'ntf_modular/sound/interactions/foot_wet2.ogg', \
 	'ntf_modular/sound/interactions/foot_wet3.ogg' \
@@ -204,6 +243,47 @@
 	'ntf_modular/sound/interactions/purr3.ogg' \
 )
 
+#define SEXCON_SOUNDS_UNDER_SMOTHER list( \
+	'ntf_modular/sound/interactions/under_moan_f1.ogg', \
+	'ntf_modular/sound/interactions/under_moan_f2.ogg', \
+	'ntf_modular/sound/interactions/under_moan_f3.ogg', \
+	'ntf_modular/sound/interactions/under_moan_f4.ogg' \
+)
+
+#define SEXCON_SOUNDS_INSERT list( \
+	'ntf_modular/sound/misc/mat/insert (1).ogg', \
+	'ntf_modular/sound/misc/mat/insert (2).ogg' \
+)
+
+// Остановка действия (Pullout / Disengage) — чистый звук извлечения / расцепления
+#define SEXCON_SOUNDS_PULLOUT list( \
+	'ntf_modular/sound/misc/cork_pop.ogg', \
+	'ntf_modular/sound/misc/cork_pop (2).ogg' \
+)
+
+// Финиш / Эякуляция / Оргазм
+#define SEXCON_SOUNDS_EJACULATION_OUT list( \
+	'ntf_modular/sound/interactions/endout.ogg', \
+	'ntf_modular/sound/misc/mat/endout.ogg' \
+)
+
+#define SEXCON_SOUNDS_EJACULATION_IN list( \
+	'ntf_modular/sound/interactions/endin.ogg', \
+	'ntf_modular/sound/misc/mat/endin.ogg' \
+)
+
+#define SEXCON_SOUNDS_WATERING list( \
+	'ntf_modular/sound/interactions/watering1.ogg', \
+	'ntf_modular/sound/interactions/watering2.ogg', \
+	'ntf_modular/sound/interactions/watering3.ogg' \
+)
+
+#define SEXCON_SOUNDS_MOUTH_END list( \
+	'ntf_modular/sound/interactions/mouthend (1).ogg', \
+	'ntf_modular/sound/interactions/mouthend (2).ogg', \
+	'ntf_modular/sound/interactions/swallow.ogg' \
+)
+
 #define SEXCON_SOUNDS_FINAL_MALE list( \
 	'ntf_modular/sound/interactions/final_m1.ogg', \
 	'ntf_modular/sound/interactions/final_m2.ogg', \
@@ -221,28 +301,4 @@
 #define SEXCON_SOUNDS_CLAW_CUM list( \
 	'ntf_modular/sound/interactions/clawcum1.ogg', \
 	'ntf_modular/sound/interactions/clawcum2.ogg' \
-)
-
-#define SEXCON_SOUNDS_INSERT list( \
-	'ntf_modular/sound/misc/mat/insert (1).ogg', \
-	'ntf_modular/sound/misc/mat/insert (2).ogg' \
-)
-
-#define SEXCON_SOUNDS_PULLOUT list( \
-	'ntf_modular/sound/misc/cork_pop.ogg', \
-	'ntf_modular/sound/misc/cork_pop (2).ogg', \
-	'ntf_modular/sound/interactions/endout.ogg', \
-	'ntf_modular/sound/misc/mat/endout.ogg' \
-)
-
-#define SEXCON_SOUNDS_WATERING list( \
-	'ntf_modular/sound/interactions/watering1.ogg', \
-	'ntf_modular/sound/interactions/watering2.ogg', \
-	'ntf_modular/sound/interactions/watering3.ogg' \
-)
-
-#define SEXCON_SOUNDS_MOUTH_END list( \
-	'ntf_modular/sound/interactions/mouthend (1).ogg', \
-	'ntf_modular/sound/interactions/mouthend (2).ogg', \
-	'ntf_modular/sound/interactions/swallow.ogg' \
 )

@@ -145,7 +145,7 @@
 	else
 		log_combat(user, target, "was made to ejaculate by")
 		SEND_SIGNAL(user, COMSIG_CAME_ONTO_BY, target)
-	playsound(target, pick(SEXCON_SOUNDS_PULLOUT), 50, TRUE, 7, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_EJACULATION_OUT), 50, TRUE, 7, ignore_walls = FALSE)
 	if(!isrobot(usr))
 		if(usr.gender == MALE)
 			new /obj/effect/decal/cleanable/blood/splatter/cum(usr.loc)
@@ -219,7 +219,7 @@
 	if(oral)
 		playsound(target, pick(SEXCON_SOUNDS_MOUTH_END + list('ntf_modular/sound/misc/mat/mouthend (1).ogg', 'ntf_modular/sound/misc/mat/mouthend (2).ogg')), 100, FALSE, 7, ignore_walls = FALSE)
 	else
-		playsound(target, pick('ntf_modular/sound/interactions/endin.ogg', 'ntf_modular/sound/misc/mat/endin.ogg'), 50, TRUE, 7, ignore_walls = FALSE)
+		playsound(target, pick(SEXCON_SOUNDS_EJACULATION_IN), 50, TRUE, 7, ignore_walls = FALSE)
 	if(user.sexcon.can_use_testicles())
 		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum, 10)
 	else
@@ -236,7 +236,7 @@
 		log_combat(user, blame_mob, "was made to ejaculate by")
 	user.visible_message(span_lovebold("[user] makes a mess!"))
 	handle_ejaculation_drain(blame_mob)
-	playsound(user, pick(SEXCON_SOUNDS_PULLOUT), 50, TRUE, 7, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_EJACULATION_OUT), 50, TRUE, 7, ignore_walls = FALSE)
 	if(!isrobot(user))
 		if(user.gender == MALE)
 			new /obj/effect/decal/cleanable/blood/splatter/cum(user.loc)
@@ -259,7 +259,7 @@
 	else if(isxeno(user))
 		C.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/strong, reagent_amount(blame_mob))
 	handle_ejaculation_drain(blame_mob)
-	playsound(user, pick(SEXCON_SOUNDS_WATERING + list('ntf_modular/sound/interactions/endout.ogg', 'ntf_modular/sound/misc/mat/endout.ogg')), 50, TRUE, 7, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_WATERING + SEXCON_SOUNDS_EJACULATION_OUT), 50, TRUE, 7, ignore_walls = FALSE)
 	after_ejaculation()
 
 /datum/sex_controller/proc/milk_container(obj/item/reagent_containers/C, mob/blame_mob)
@@ -275,7 +275,7 @@
 	else if(isxeno(user))
 		C.reagents.add_reagent(/datum/reagent/consumable/milk/xeno, reagent_amount(blame_mob))
 	handle_ejaculation_drain(blame_mob)
-	playsound(user, pick(SEXCON_SOUNDS_WATERING + list('ntf_modular/sound/interactions/endout.ogg', 'ntf_modular/sound/misc/mat/endout.ogg')), 50, TRUE, 7, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_WATERING), 50, TRUE, 7, ignore_walls = FALSE)
 	after_ejaculation()
 
 /datum/sex_controller/proc/reagent_amount(mob/blame_mob)

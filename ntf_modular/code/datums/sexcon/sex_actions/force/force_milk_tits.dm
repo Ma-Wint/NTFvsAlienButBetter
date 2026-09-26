@@ -21,7 +21,7 @@
 /datum/sex_action/force_milk_tits/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] tugs [target]'s nipples against the [user.get_active_held_item()]..."))
-	playsound(user, pick(SEXCON_SOUNDS_SQUELCH + SEXCON_SOUNDS_WATERING), 30, TRUE, 7, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_SQUELCH), 30, TRUE, 7, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(target, 4, 4, TRUE)
 

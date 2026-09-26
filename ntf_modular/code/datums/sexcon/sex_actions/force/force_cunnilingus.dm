@@ -22,7 +22,7 @@
 /datum/sex_action/force_cunnilingus/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] forces [target] to suck [user.p_their()] cunt."))
-	target.make_sucking_noise()
+	playsound(target, pick(SEXCON_SOUNDS_ORAL_LICK), 25, TRUE, 7, ignore_walls = FALSE)
 	do_thrust_animate(target, user)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)

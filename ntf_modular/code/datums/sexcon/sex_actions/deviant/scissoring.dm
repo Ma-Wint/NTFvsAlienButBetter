@@ -20,7 +20,7 @@
 /datum/sex_action/scissoring/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] scissors with [target]'s cunt."))
-	playsound(target, pick(SEXCON_SOUNDS_WET_PLAP + SEXCON_SOUNDS_SQUELCH), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_SCISSORING), 50, TRUE, 5, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(user, 1, 4, TRUE)

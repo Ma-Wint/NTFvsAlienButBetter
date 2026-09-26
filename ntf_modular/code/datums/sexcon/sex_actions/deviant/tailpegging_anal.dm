@@ -24,7 +24,7 @@
 /datum/sex_action/tailpegging_anal/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s butt with [user.p_their()] tail."))
-	playsound(target, pick(SEXCON_SOUNDS_DRY_FLOP_QUICK + SEXCON_SOUNDS_DRY_FLOP), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(list('ntf_modular/sound/interactions/thudswoosh.ogg', 'ntf_modular/sound/interactions/DryFlopQuick1.ogg', 'ntf_modular/sound/interactions/DryFlopQuick2.ogg')), 50, TRUE, 5, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 

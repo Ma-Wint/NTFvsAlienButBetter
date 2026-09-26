@@ -22,7 +22,7 @@
 /datum/sex_action/anal_ride_sex/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rides [target]."))
-	playsound(target, pick(SEXCON_SOUNDS_DRY_FLOP_QUICK + SEXCON_SOUNDS_DRY_FLOP + list('ntf_modular/sound/misc/mat/segso.ogg')), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_DRY_FLOP), 50, TRUE, 5, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 	if(target.sexcon.considered_limp())

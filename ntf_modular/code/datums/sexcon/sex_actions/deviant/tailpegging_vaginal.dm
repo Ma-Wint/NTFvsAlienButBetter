@@ -21,7 +21,7 @@
 /datum/sex_action/tailpegging_vaginal/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt with [user.p_their()] tail."))
-	playsound(target, pick(SEXCON_SOUNDS_WET_PLAP + list('ntf_modular/sound/misc/mat/segso.ogg')), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(list('ntf_modular/sound/interactions/thudswoosh.ogg', 'ntf_modular/sound/interactions/WetPlap01.ogg', 'ntf_modular/sound/interactions/WetPlap02.ogg')), 50, TRUE, 5, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 	if(user.sexcon.considered_limp())

@@ -21,7 +21,7 @@
 /datum/sex_action/cunnilingus/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] sucks [target]'s clit..."))
-	user.make_sucking_noise()
+	playsound(user, pick(SEXCON_SOUNDS_ORAL_LICK), 25, TRUE, 7, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(target, 2, 3, TRUE)

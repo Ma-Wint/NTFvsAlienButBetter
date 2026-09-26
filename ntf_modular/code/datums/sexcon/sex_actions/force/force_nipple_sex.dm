@@ -21,7 +21,7 @@
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [user.p_their()]  nipple against [target]'s cock forcibly."))
 	target.make_sucking_noise()
-	playsound(target, pick(SEXCON_SOUNDS_WET_PLAP + SEXCON_SOUNDS_SQUELCH), 30, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_SQUELCH), 30, TRUE, 5, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 	if(target.sexcon.check_active_ejaculation())

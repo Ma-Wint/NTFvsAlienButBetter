@@ -19,7 +19,7 @@
 /datum/sex_action/masturbate_anus/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fingers [user.p_their()] butt..."))
-	playsound(user, pick(SEXCON_SOUNDS_FINGERING), 30, TRUE, 5, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_ANUS_FINGERING), 30, TRUE, 5, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 6, TRUE)
 	user.sexcon.handle_passive_ejaculation(user)

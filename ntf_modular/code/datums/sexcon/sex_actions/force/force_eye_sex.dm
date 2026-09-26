@@ -35,7 +35,7 @@
 /datum/sex_action/force_eye_sex/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(target.sexcon.do_message_signature("[type]"))
 		target.visible_message(target.sexcon.spanify_force("[target] [target.sexcon.get_generic_force_adjective()] fucks [user]'s eye."))
-	playsound(user, pick(SEXCON_SOUNDS_WET_PLAP + SEXCON_SOUNDS_SQUELCH), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_SQUELCH + list('ntf_modular/sound/misc/mat/segso.ogg')), 30, TRUE, 5, ignore_walls = FALSE)
 
 	var/flags = user.client?.prefs.sex_pref_flags
 	target.sexcon.perform_sex_action(target, 2, 0, TRUE)

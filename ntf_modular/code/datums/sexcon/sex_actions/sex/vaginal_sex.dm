@@ -22,7 +22,7 @@
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt."))
 
-	playsound(target, pick(SEXCON_SOUNDS_WET_PLAP + list('ntf_modular/sound/misc/mat/segso.ogg')), 50, TRUE, 5, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_WET_PLAP), 50, TRUE, 5, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
