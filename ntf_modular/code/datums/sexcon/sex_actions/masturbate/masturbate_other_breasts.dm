@@ -20,6 +20,7 @@
 /datum/sex_action/masturbate_other_breasts/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fondles [target]'s breasts..."))
+	playsound(user, pick(SEXCON_SOUNDS_SQUELCH + SEXCON_SOUNDS_DRY_FLOP), 25, TRUE, 5, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(target, 1, 4, TRUE)
 	target.sexcon.handle_passive_ejaculation(user)

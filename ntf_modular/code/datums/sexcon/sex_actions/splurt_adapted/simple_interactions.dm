@@ -24,10 +24,43 @@
 
 #define SEXCON_CUTE_INTERACTION_COLOR "blue"
 #define SEXCON_CUTE_INTERACTION_PRIORITY 0
-#define SEXCON_TOUCH_INTERACTION_SOUNDS list('sound/weapons/tap.ogg', 'sound/effects/rustle1.ogg', 'sound/effects/rustle2.ogg')
-#define SEXCON_SLAP_INTERACTION_SOUNDS list('sound/weapons/banjoslap.ogg', 'sound/weapons/punchmiss.ogg')
-#define SEXCON_WET_INTERACTION_SOUNDS list('ntf_modular/sound/misc/mat/fingering.ogg', 'ntf_modular/sound/misc/mat/segso.ogg')
-#define SEXCON_HAND_INTERACTION_SOUNDS list('ntf_modular/sound/misc/mat/fingering.ogg')
+#define SEXCON_TOUCH_INTERACTION_SOUNDS list('sound/weapons/tap.ogg', 'sound/effects/rustle1.ogg', 'sound/effects/rustle2.ogg', 'ntf_modular/sound/interactions/hug.ogg')
+#define SEXCON_SLAP_INTERACTION_SOUNDS list('ntf_modular/sound/interactions/slap.ogg', 'sound/weapons/banjoslap.ogg', 'sound/weapons/punchmiss.ogg')
+#define SEXCON_WET_INTERACTION_SOUNDS list( \
+	'ntf_modular/sound/interactions/WetPlap01.ogg', \
+	'ntf_modular/sound/interactions/WetPlap02.ogg', \
+	'ntf_modular/sound/interactions/WetPlap03.ogg', \
+	'ntf_modular/sound/interactions/WetPlap04.ogg', \
+	'ntf_modular/sound/interactions/WetPlap05.ogg', \
+	'ntf_modular/sound/interactions/WetPlap06.ogg', \
+	'ntf_modular/sound/interactions/WetPlap07.ogg', \
+	'ntf_modular/sound/interactions/WetPlap08.ogg', \
+	'ntf_modular/sound/interactions/WetPlap09.ogg', \
+	'ntf_modular/sound/interactions/WetPlap10.ogg', \
+	'ntf_modular/sound/misc/mat/segso.ogg' \
+)
+#define SEXCON_HAND_INTERACTION_SOUNDS list( \
+	'ntf_modular/sound/interactions/fap1.ogg', \
+	'ntf_modular/sound/interactions/fap2.ogg', \
+	'ntf_modular/sound/interactions/fap3.ogg', \
+	'ntf_modular/sound/interactions/fap4.ogg', \
+	'ntf_modular/sound/interactions/fap5.ogg', \
+	'ntf_modular/sound/interactions/fingering01.ogg', \
+	'ntf_modular/sound/interactions/fingering02.ogg', \
+	'ntf_modular/sound/interactions/fingering03.ogg', \
+	'ntf_modular/sound/interactions/fingering04.ogg', \
+	'ntf_modular/sound/interactions/fingering05.ogg', \
+	'ntf_modular/sound/interactions/fingering06.ogg', \
+	'ntf_modular/sound/interactions/fingering07.ogg', \
+	'ntf_modular/sound/interactions/fingering08.ogg', \
+	'ntf_modular/sound/interactions/fingering09.ogg', \
+	'ntf_modular/sound/interactions/fingering10.ogg', \
+	'ntf_modular/sound/interactions/fingering11.ogg', \
+	'ntf_modular/sound/interactions/fingering12.ogg', \
+	'ntf_modular/sound/interactions/fingering13.ogg', \
+	'ntf_modular/sound/interactions/champ_fingering.ogg', \
+	'ntf_modular/sound/misc/mat/fingering.ogg' \
+)
 
 /datum/sex_action/simple_interaction
 	abstract_type = /datum/sex_action/simple_interaction
@@ -189,7 +222,8 @@
 	require_user_tail = TRUE
 	menu_color = SEXCON_CUTE_INTERACTION_COLOR
 	menu_priority = SEXCON_CUTE_INTERACTION_PRIORITY
-	perform_sound = FALSE
+	perform_sound = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/hug.ogg', 'sound/effects/rustle1.ogg', 'sound/effects/rustle2.ogg')
 	perform_message = "%USER% wraps %USER_THEIR% tail around %TARGET% in a gentle hug."
 
 /datum/sex_action/simple_interaction/tail_pet
@@ -197,7 +231,8 @@
 	require_user_tail = TRUE
 	menu_color = SEXCON_CUTE_INTERACTION_COLOR
 	menu_priority = SEXCON_CUTE_INTERACTION_PRIORITY
-	perform_sound = FALSE
+	perform_sound = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/thudswoosh.ogg', 'sound/weapons/tap.ogg', 'sound/effects/rustle1.ogg')
 	perform_message = "%USER% gently pets %TARGET% with %USER_THEIR% tail."
 
 /datum/sex_action/simple_interaction/tail_intertwine
@@ -216,7 +251,8 @@
 	self_only = TRUE
 	menu_color = SEXCON_CUTE_INTERACTION_COLOR
 	menu_priority = SEXCON_CUTE_INTERACTION_PRIORITY
-	perform_sound = FALSE
+	perform_sound = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/hug.ogg', 'sound/effects/rustle1.ogg', 'sound/effects/rustle2.ogg')
 	perform_message = "%USER% curls up and hugs %USER_THEIR% own tail."
 
 /datum/sex_action/simple_interaction/kiss
@@ -231,7 +267,7 @@
 /datum/sex_action/simple_interaction/kiss/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] kisses [target]."))
-	user.make_sucking_noise()
+	playsound(user, pick(SEXCON_SOUNDS_KISS), 30, TRUE, 5, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 0.5, 0, TRUE)
 	user.sexcon.handle_passive_ejaculation(user)
@@ -255,7 +291,8 @@
 
 /datum/sex_action/simple_interaction/slap_ass
 	name = "Slap Ass"
-	perform_sound = FALSE
+	perform_sound = TRUE
+	perform_sounds = SEXCON_SLAP_INTERACTION_SOUNDS
 	perform_message = "%USER% slaps %TARGET%'s ass."
 	user_arousal = 2
 	target_pain = 10
@@ -313,6 +350,7 @@
 	name = "Armpit Fuck"
 	require_user_penis = TRUE
 	continous = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/bang1.ogg', 'ntf_modular/sound/interactions/bang2.ogg', 'ntf_modular/sound/interactions/champ_fingering.ogg', 'ntf_modular/sound/interactions/squelch1.ogg', 'ntf_modular/sound/interactions/squelch2.ogg', 'ntf_modular/sound/interactions/squelch3.ogg')
 	start_message = "%USER% presses %USER_THEIR% cock against %TARGET%'s armpit."
 	perform_message = "%USER% fucks %TARGET%'s armpit."
 	finish_message = "%USER% pulls away from %TARGET%'s armpit."
@@ -331,6 +369,7 @@
 	name = "Bellyfuck"
 	require_user_penis = TRUE
 	continous = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/bang1.ogg', 'ntf_modular/sound/interactions/bang2.ogg', 'ntf_modular/sound/interactions/bang3.ogg', 'ntf_modular/sound/interactions/thudswoosh.ogg')
 	start_message = "%USER% presses %USER_THEIR% cock against %TARGET%'s belly."
 	perform_message = "%USER% fucks against %TARGET%'s belly."
 	finish_message = "%USER% pulls away from %TARGET%'s belly."
@@ -341,7 +380,8 @@
 
 /datum/sex_action/simple_interaction/nuzzle_belly
 	name = "Nuzzle Belly"
-	perform_sound = FALSE
+	perform_sound = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/hug.ogg', 'sound/effects/rustle1.ogg', 'sound/effects/rustle2.ogg')
 	message_signature_effects = FALSE
 	perform_message = "%USER% nuzzles %TARGET%'s belly."
 	user_arousal = 1
@@ -352,6 +392,7 @@
 	name = "Grope Breasts"
 	require_target_breasts = TRUE
 	replaced_by_base_action = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/DryFlop2.ogg', 'ntf_modular/sound/interactions/DryFlop3.ogg', 'ntf_modular/sound/interactions/squelch1.ogg', 'ntf_modular/sound/interactions/squelch2.ogg')
 	perform_message = "%USER% gropes %TARGET%'s breasts."
 	user_arousal = 3
 	target_arousal = 6
@@ -360,6 +401,7 @@
 	name = "Breast Smother"
 	require_user_breasts = TRUE
 	continous = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/DryFlop2.ogg', 'ntf_modular/sound/interactions/DryFlop3.ogg', 'ntf_modular/sound/interactions/squelch1.ogg')
 	start_message = "%USER% presses %USER_THEIR% breasts against %TARGET%'s face."
 	perform_message = "%USER% smothers %TARGET% with %USER_THEIR% breasts."
 	finish_message = "%USER% pulls away from %TARGET%'s face."
@@ -369,6 +411,7 @@
 /datum/sex_action/simple_interaction/butt_smother
 	name = "Butt Smother"
 	continous = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/DryFlop2.ogg', 'ntf_modular/sound/interactions/DryFlop3.ogg', 'ntf_modular/sound/interactions/DryFlop4.ogg')
 	start_message = "%USER% presses %USER_THEIR% ass against %TARGET%'s face."
 	perform_message = "%USER% smothers %TARGET% with %USER_THEIR% ass."
 	finish_message = "%USER% pulls away from %TARGET%'s face."
@@ -379,7 +422,8 @@
 	name = "Stroke Ears"
 	menu_color = SEXCON_CUTE_INTERACTION_COLOR
 	menu_priority = SEXCON_CUTE_INTERACTION_PRIORITY
-	perform_sound = FALSE
+	perform_sound = TRUE
+	perform_sounds = list('sound/weapons/tap.ogg', 'sound/effects/rustle1.ogg', 'sound/effects/rustle2.ogg')
 	perform_message = "%USER% strokes %TARGET%'s ears."
 	target_arousal = 1
 
@@ -395,6 +439,7 @@
 	name = "Facefuck (Vagina)"
 	require_user_vagina = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_WET_PLAP
 	start_message = "%USER% pushes %USER_THEIR% pussy against %TARGET%'s mouth."
 	perform_message = "%USER% grinds %USER_THEIR% pussy against %TARGET%'s mouth."
 	finish_message = "%USER% pulls away from %TARGET%'s mouth."
@@ -404,6 +449,7 @@
 /datum/sex_action/simple_interaction/grind_face
 	name = "Grind Face"
 	continous = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/foot_dry1.ogg', 'ntf_modular/sound/interactions/foot_dry2.ogg', 'ntf_modular/sound/interactions/foot_wet1.ogg')
 	start_message = "%USER% presses %USER_THEIR% foot against %TARGET%'s face."
 	perform_message = "%USER% grinds %USER_THEIR% foot against %TARGET%'s face."
 	finish_message = "%USER% pulls %USER_THEIR% foot back from %TARGET%."
@@ -414,6 +460,7 @@
 	name = "Double Footjob"
 	require_target_penis = TRUE
 	continous = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/foot_dry1.ogg', 'ntf_modular/sound/interactions/foot_dry2.ogg', 'ntf_modular/sound/interactions/foot_wet1.ogg', 'ntf_modular/sound/interactions/foot_wet2.ogg')
 	start_message = "%USER% places both feet around %TARGET%'s cock."
 	perform_message = "%USER% strokes %TARGET%'s cock between %USER_THEIR% feet."
 	finish_message = "%USER% pulls %USER_THEIR% feet away from %TARGET%."
@@ -425,6 +472,7 @@
 	require_target_vagina = TRUE
 	continous = TRUE
 	replaced_by_base_action = TRUE
+	perform_sounds = SEXCON_SOUNDS_FINGERING
 	start_message = "%USER% slides %USER_THEIR% fingers against %TARGET%'s pussy."
 	perform_message = "%USER% fingers %TARGET%'s pussy."
 	finish_message = "%USER% pulls %USER_THEIR% fingers away from %TARGET%."
@@ -435,6 +483,7 @@
 	name = "Finger Ass"
 	continous = TRUE
 	replaced_by_base_action = TRUE
+	perform_sounds = SEXCON_SOUNDS_FINGERING
 	start_message = "%USER% slides %USER_THEIR% fingers against %TARGET%'s ass."
 	perform_message = "%USER% fingers %TARGET%'s ass."
 	finish_message = "%USER% pulls %USER_THEIR% fingers away from %TARGET%."
@@ -474,7 +523,7 @@
 	require_user_tail = TRUE
 	require_target_penis = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_FAP
 	perform_sound_volume = 30
 	start_message = "%USER% curls %USER_THEIR% tail around %TARGET%'s cock."
 	perform_message = "%USER% strokes %TARGET%'s cock with %USER_THEIR% tail."
@@ -486,7 +535,7 @@
 	require_user_tail = TRUE
 	require_target_vagina = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_FINGERING
 	perform_sound_volume = 30
 	start_message = "%USER% curls %USER_THEIR% tail against %TARGET%'s pussy."
 	perform_message = "%USER% rubs %TARGET%'s pussy with %USER_THEIR% tail."
@@ -499,6 +548,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	replaced_by_base_action = TRUE
+	perform_sounds = list('ntf_modular/sound/interactions/DryFlop1.ogg', 'ntf_modular/sound/interactions/DryFlop2.ogg', 'ntf_modular/sound/interactions/DryFlop3.ogg', 'ntf_modular/sound/interactions/squelch1.ogg', 'ntf_modular/sound/interactions/squelch2.ogg')
 	perform_message = "%USER% gropes %USER_THEIR% own breasts."
 	user_arousal = 5
 
@@ -509,6 +559,7 @@
 	self_only = TRUE
 	continous = TRUE
 	replaced_by_base_action = TRUE
+	perform_sounds = SEXCON_SOUNDS_FAP
 	start_message = "%USER% wraps a hand around %USER_THEIR% cock."
 	perform_message = "%USER% strokes %USER_THEIR% cock."
 	finish_message = "%USER% stops stroking %USER_THEIR% cock."
@@ -521,6 +572,7 @@
 	self_only = TRUE
 	continous = TRUE
 	replaced_by_base_action = TRUE
+	perform_sounds = SEXCON_SOUNDS_FINGERING
 	start_message = "%USER% slides %USER_THEIR% fingers against %USER_THEIR% pussy."
 	perform_message = "%USER% fingers %USER_THEIR% own pussy."
 	finish_message = "%USER% pulls %USER_THEIR% fingers away."
@@ -533,7 +585,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_FAP
 	perform_sound_volume = 30
 	start_message = "%USER% curls %USER_THEIR% tail around %USER_THEIR% cock."
 	perform_message = "%USER% strokes %USER_THEIR% cock with %USER_THEIR% tail."
@@ -547,7 +599,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_FINGERING
 	perform_sound_volume = 30
 	start_message = "%USER% curls %USER_THEIR% tail against %USER_THEIR% pussy."
 	perform_message = "%USER% rubs %USER_THEIR% pussy with %USER_THEIR% tail."
@@ -561,7 +613,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_WET_PLAP
 	perform_sound_volume = 30
 	start_message = "%USER% guides %USER_THEIR% tail against %USER_THEIR% pussy."
 	perform_message = "%USER% works %USER_THEIR% tail into %USER_THEIR% own pussy."
@@ -575,7 +627,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP_QUICK
 	perform_sound_volume = 30
 	start_message = "%USER% guides %USER_THEIR% tail behind %USER_THEIR% hips."
 	perform_message = "%USER% works %USER_THEIR% tail into %USER_THEIR% own ass."
@@ -589,7 +641,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP_QUICK
 	perform_sound_volume = 30
 	start_message = "%USER% curls %USER_THEIR% tail behind %USER_THEIR% hips."
 	perform_message = "%USER% slides %USER_THEIR% tail between %USER_THEIR% cheeks."
@@ -619,7 +671,7 @@
 	allow_self = TRUE
 	self_only = TRUE
 	continous = TRUE
-	perform_sounds = SEXCON_HAND_INTERACTION_SOUNDS
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP
 	perform_sound_volume = 30
 	start_message = "%USER% curls %USER_THEIR% tail against %USER_THEIR% breasts."
 	perform_message = "%USER% slides %USER_THEIR% tail between %USER_THEIR% own breasts."
@@ -640,6 +692,7 @@
 	require_user_knot = TRUE
 	require_target_vagina = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_WET_PLAP
 	start_message = "%USER% presses %USER_THEIR% knot against %TARGET%'s pussy."
 	perform_message = "%USER% fucks %TARGET%'s pussy with %USER_THEIR% knot."
 	finish_message = "%USER% pulls away from %TARGET%."
@@ -653,6 +706,7 @@
 	name = "Anal Knotfuck"
 	require_user_knot = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP_QUICK
 	start_message = "%USER% presses %USER_THEIR% knot against %TARGET%'s ass."
 	perform_message = "%USER% fucks %TARGET%'s ass with %USER_THEIR% knot."
 	finish_message = "%USER% pulls away from %TARGET%."
@@ -666,6 +720,7 @@
 	name = "Oral Knotfuck"
 	require_user_knot = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_BLOWJOB
 	start_message = "%USER% presses %USER_THEIR% knot against %TARGET%'s mouth."
 	perform_message = "%USER% fucks %TARGET%'s mouth with %USER_THEIR% knot."
 	finish_message = "%USER% pulls away from %TARGET%'s mouth."
@@ -680,6 +735,7 @@
 	require_user_vagina = TRUE
 	require_target_knot = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_WET_PLAP
 	start_message = "%USER% lowers %USER_THEIR% pussy over %TARGET%'s knot."
 	perform_message = "%USER% rides %TARGET%'s knot."
 	finish_message = "%USER% climbs off %TARGET%."
@@ -693,6 +749,7 @@
 	name = "Knotride (Anus)"
 	require_target_knot = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP_QUICK
 	start_message = "%USER% lowers %USER_THEIR% ass over %TARGET%'s knot."
 	perform_message = "%USER% rides %TARGET%'s knot anally."
 	finish_message = "%USER% climbs off %TARGET%."
@@ -707,6 +764,7 @@
 	require_user_flare = TRUE
 	require_target_vagina = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_WET_PLAP
 	start_message = "%USER% presses %USER_THEIR% flared cock against %TARGET%'s pussy."
 	perform_message = "%USER% fucks %TARGET%'s pussy with %USER_THEIR% flared cock."
 	finish_message = "%USER% pulls away from %TARGET%."
@@ -720,6 +778,7 @@
 	name = "Anal Flarefuck"
 	require_user_flare = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP_QUICK
 	start_message = "%USER% presses %USER_THEIR% flared cock against %TARGET%'s ass."
 	perform_message = "%USER% fucks %TARGET%'s ass with %USER_THEIR% flared cock."
 	finish_message = "%USER% pulls away from %TARGET%."
@@ -733,6 +792,7 @@
 	name = "Oral Flarefuck"
 	require_user_flare = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_BLOWJOB
 	start_message = "%USER% presses %USER_THEIR% flared cock against %TARGET%'s mouth."
 	perform_message = "%USER% fucks %TARGET%'s mouth with %USER_THEIR% flared cock."
 	finish_message = "%USER% pulls away from %TARGET%'s mouth."
@@ -747,6 +807,7 @@
 	require_user_vagina = TRUE
 	require_target_flare = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_WET_PLAP
 	start_message = "%USER% lowers %USER_THEIR% pussy over %TARGET%'s flared cock."
 	perform_message = "%USER% rides %TARGET%'s flared cock."
 	finish_message = "%USER% climbs off %TARGET%."
@@ -760,9 +821,15 @@
 	name = "Flareride (Anus)"
 	require_target_flare = TRUE
 	continous = TRUE
+	perform_sounds = SEXCON_SOUNDS_DRY_FLOP_QUICK
 	start_message = "%USER% lowers %USER_THEIR% ass over %TARGET%'s flared cock."
 	perform_message = "%USER% rides %TARGET%'s flared cock anally."
 	finish_message = "%USER% climbs off %TARGET%."
+	user_arousal = 9
+	target_arousal = 9
+	user_pain = 3
+	user_penetrative = TRUE
+	target_hole = HOLE_ASS
 	user_arousal = 9
 	target_arousal = 9
 	user_pain = 3

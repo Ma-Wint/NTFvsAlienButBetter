@@ -21,7 +21,7 @@
 /datum/sex_action/force_milk_genitals/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] jerks [target]'s cock into the [user.get_active_held_item()]..."))
-	playsound(user, 'ntf_modular/sound/misc/mat/fingering.ogg', 30, TRUE, 7, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_FAP + SEXCON_SOUNDS_WATERING), 30, TRUE, 7, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(target, 4, 4, TRUE)
 

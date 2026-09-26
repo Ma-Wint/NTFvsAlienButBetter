@@ -18,7 +18,7 @@
 /datum/sex_action/force_blowjob/on_start(mob/living/carbon/user, mob/living/carbon/target)
 	..()
 	user.visible_message(span_warning("[user] forces [target]'s head down to swallow and suck on [user.p_their()] cock!"))
-	playsound(target, pick(list('ntf_modular/sound/misc/mat/insert (1).ogg','ntf_modular/sound/misc/mat/insert (2).ogg')), 20, TRUE, 7, ignore_walls = FALSE)
+	playsound(target, pick(SEXCON_SOUNDS_INSERT), 20, TRUE, 7, ignore_walls = FALSE)
 
 /datum/sex_action/force_blowjob/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user.sexcon.do_message_signature("[type]"))
@@ -43,7 +43,7 @@
 	target.sexcon.handle_passive_ejaculation(user)
 
 /datum/sex_action/force_blowjob/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)
+	playsound(user, pick(SEXCON_SOUNDS_PULLOUT), 75, TRUE, 7, ignore_walls = FALSE)
 	user.visible_message(span_warning("[user] pulls [user.p_their()] cock out of [target]'s throat."))
 
 /datum/sex_action/force_blowjob/is_finished(mob/living/carbon/user, mob/living/carbon/target)

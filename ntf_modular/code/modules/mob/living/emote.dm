@@ -87,13 +87,43 @@
 		return
 	user.toggle_tail_wag()
 
-/datum/emote/living/carbon/human/sexmoanlight
+/datum/emote/living/sexmoanlight
 	key = "sexmoanlight"
+	key_third_person = "moans softly"
+	message = "moans softly."
+	message_alien = "quivers with a soft chittering moan."
 	emote_type = EMOTE_TYPE_AUDIBLE
 
-/datum/emote/living/carbon/human/sexmoanhvy
+/datum/emote/living/sexmoanlight/get_sound(mob/living/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/human = user
+		if(!human.species)
+			return
+		if(human.species.sexymoanlights[human.gender])
+			return human.species.sexymoanlights[human.gender]
+		if(human.species.sexymoanlights[NEUTER])
+			return human.species.sexymoanlights[NEUTER]
+	else if(isxeno(user))
+		return pick('ntf_modular/sound/interactions/purr1.ogg', 'ntf_modular/sound/interactions/purr2.ogg', 'sound/voice/alien/drool1.ogg', 'sound/voice/alien/drool2.ogg')
+
+/datum/emote/living/sexmoanhvy
 	key = "sexmoanhvy"
+	key_third_person = "moans loudly"
+	message = "moans loudly!"
+	message_alien = "convulses with an intense shuddering moan!"
 	emote_type = EMOTE_TYPE_AUDIBLE
+
+/datum/emote/living/sexmoanhvy/get_sound(mob/living/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/human = user
+		if(!human.species)
+			return
+		if(human.species.sexymoanhvys[human.gender])
+			return human.species.sexymoanhvys[human.gender]
+		if(human.species.sexymoanhvys[NEUTER])
+			return human.species.sexymoanhvys[NEUTER]
+	else if(isxeno(user))
+		return pick('ntf_modular/sound/interactions/purr2.ogg', 'ntf_modular/sound/interactions/purr3.ogg', 'sound/voice/alien/talk.ogg', 'sound/voice/alien/talk2.ogg')
 
 /datum/emote/living/groan
 	key = "groan"

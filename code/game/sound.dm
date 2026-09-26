@@ -477,13 +477,86 @@ A good representation is: 'byond applies a volume reduction to the sound every X
 		if("talk_phone")
 			soundin = pick('ntf_modular/sound/machines/telephone/talk_phone1.ogg', 'ntf_modular/sound/machines/telephone/talk_phone2.ogg', 'ntf_modular/sound/machines/telephone/talk_phone3.ogg', 'ntf_modular/sound/machines/telephone/talk_phone4.ogg', 'ntf_modular/sound/machines/telephone/talk_phone5.ogg', 'ntf_modular/sound/machines/telephone/talk_phone6.ogg', 'ntf_modular/sound/machines/telephone/talk_phone7.ogg')
 		if(SFX_FEMALE_CHOKE)
-			soundin = list('ntf_modular/sound/vo/female/gen/choke (1).ogg','ntf_modular/sound/vo/female/gen/choke (2).ogg','ntf_modular/sound/vo/female/gen/choke (3).ogg')
+			soundin = pick( \
+				'ntf_modular/sound/vo/female/gen/choke (1).ogg', \
+				'ntf_modular/sound/vo/female/gen/choke (2).ogg', \
+				'ntf_modular/sound/vo/female/gen/choke (3).ogg', \
+				'ntf_modular/sound/interactions/under_moan_f1.ogg', \
+				'ntf_modular/sound/interactions/under_moan_f2.ogg', \
+				'ntf_modular/sound/interactions/under_moan_f3.ogg', \
+				'ntf_modular/sound/interactions/under_moan_f4.ogg' \
+			)
 		if(SFX_FEMALE_GROAN)
-			soundin = list('ntf_modular/sound/vo/female/gen/groan (1).ogg','ntf_modular/sound/vo/female/gen/groan (2).ogg','ntf_modular/sound/vo/female/gen/groan (3).ogg','ntf_modular/sound/vo/female/gen/groan (4).ogg','ntf_modular/sound/vo/female/gen/groan (5).ogg')
+			soundin = pick( \
+				'ntf_modular/sound/vo/female/gen/groan (1).ogg', \
+				'ntf_modular/sound/vo/female/gen/groan (2).ogg', \
+				'ntf_modular/sound/vo/female/gen/groan (3).ogg', \
+				'ntf_modular/sound/vo/female/gen/groan (4).ogg', \
+				'ntf_modular/sound/vo/female/gen/groan (5).ogg' \
+			)
 		if(SFX_FEMALE_SEXYMOANLIGHT)
-			soundin = list('ntf_modular/sound/vo/female/gen/se/sexlight (1).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (2).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (3).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (4).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (5).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (6).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (7).ogg')
+			soundin = pick( \
+				'ntf_modular/sound/interactions/moan_f1.ogg', \
+				'ntf_modular/sound/interactions/moan_f2.ogg', \
+				'ntf_modular/sound/interactions/moan_f3.ogg', \
+				'ntf_modular/sound/interactions/moan_f4.ogg', \
+				'ntf_modular/sound/interactions/moan_f5.ogg', \
+				'ntf_modular/sound/interactions/moan_f6.ogg', \
+				'ntf_modular/sound/interactions/moan_f7.ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (1).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (2).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (3).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (4).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (5).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (6).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sexlight (7).ogg' \
+			)
 		if(SFX_FEMALE_SEXYMOANHVY)
-			soundin = list('ntf_modular/sound/vo/female/gen/se/sex (1).ogg','ntf_modular/sound/vo/female/gen/se/sex (2).ogg','ntf_modular/sound/vo/female/gen/se/sex (3).ogg','ntf_modular/sound/vo/female/gen/se/sex (4).ogg','ntf_modular/sound/vo/female/gen/se/sex (5).ogg','ntf_modular/sound/vo/female/gen/se/sex (6).ogg','ntf_modular/sound/vo/female/gen/se/sex (7).ogg','ntf_modular/sound/vo/female/gen/se/sex (8).ogg')
+			soundin = pick( \
+				'ntf_modular/sound/interactions/final_f1.ogg', \
+				'ntf_modular/sound/interactions/final_f2.ogg', \
+				'ntf_modular/sound/interactions/final_f3.ogg', \
+				'ntf_modular/sound/interactions/moan_f4.ogg', \
+				'ntf_modular/sound/interactions/moan_f5.ogg', \
+				'ntf_modular/sound/interactions/moan_f6.ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (1).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (2).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (3).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (4).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (5).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (6).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (7).ogg', \
+				'ntf_modular/sound/vo/female/gen/se/sex (8).ogg' \
+			)
+		if(SFX_MALE_GROAN)
+			soundin = pick( \
+				'ntf_modular/sound/interactions/moan_m0.ogg', \
+				'ntf_modular/sound/interactions/moan_m1.ogg', \
+				'ntf_modular/sound/interactions/moan_m2.ogg', \
+				'ntf_modular/sound/interactions/moan_m7.ogg' \
+			)
+		if(SFX_MALE_SEXYMOANLIGHT)
+			soundin = pick( \
+				'ntf_modular/sound/interactions/moan_m0.ogg', \
+				'ntf_modular/sound/interactions/moan_m1.ogg', \
+				'ntf_modular/sound/interactions/moan_m2.ogg', \
+				'ntf_modular/sound/interactions/moan_m3.ogg', \
+				'ntf_modular/sound/interactions/moan_m4.ogg', \
+				'ntf_modular/sound/interactions/moan_m5.ogg', \
+				'ntf_modular/sound/interactions/moan_m6.ogg', \
+				'ntf_modular/sound/interactions/moan_m7.ogg', \
+				'ntf_modular/sound/interactions/moan_m12.ogg' \
+			)
+		if(SFX_MALE_SEXYMOANHVY)
+			soundin = pick( \
+				'ntf_modular/sound/interactions/final_m1.ogg', \
+				'ntf_modular/sound/interactions/final_m2.ogg', \
+				'ntf_modular/sound/interactions/final_m3.ogg', \
+				'ntf_modular/sound/interactions/final_m4.ogg', \
+				'ntf_modular/sound/interactions/final_m5.ogg', \
+				'ntf_modular/sound/interactions/moan_m2.ogg', \
+				'ntf_modular/sound/interactions/moan_m3.ogg' \
+			)
 		if(SFX_LARVA_TALK)
 			soundin = pick('ntf_modular/sound/voice/alien/larva_talk1.ogg','ntf_modular/sound/voice/alien/larva_talk2.ogg','ntf_modular/sound/voice/alien/larva_talk3.ogg','ntf_modular/sound/voice/alien/larva_talk4.ogg')
 

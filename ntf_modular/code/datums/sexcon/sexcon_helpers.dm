@@ -97,9 +97,49 @@
 
 /mob/living/proc/make_sucking_noise()
 	if(gender == FEMALE)
-		playsound(src, pick('ntf_modular/sound/misc/mat/girlmouth (1).ogg','ntf_modular/sound/misc/mat/girlmouth (2).ogg'), 25, TRUE, 7, ignore_walls = FALSE)
+		playsound(src, pick( \
+			'ntf_modular/sound/misc/mat/girlmouth (1).ogg', \
+			'ntf_modular/sound/misc/mat/girlmouth (2).ogg', \
+			'ntf_modular/sound/interactions/girlmouth (1).ogg', \
+			'ntf_modular/sound/interactions/girlmouth (2).ogg', \
+			'ntf_modular/sound/interactions/bj1.ogg', \
+			'ntf_modular/sound/interactions/bj2.ogg', \
+			'ntf_modular/sound/interactions/bj3.ogg', \
+			'ntf_modular/sound/interactions/bj4.ogg', \
+			'ntf_modular/sound/interactions/bj5.ogg', \
+			'ntf_modular/sound/interactions/bj6.ogg', \
+			'ntf_modular/sound/interactions/bj7.ogg', \
+			'ntf_modular/sound/interactions/bj8.ogg', \
+			'ntf_modular/sound/interactions/bj9.ogg', \
+			'ntf_modular/sound/interactions/bj10.ogg', \
+			'ntf_modular/sound/interactions/bj11.ogg', \
+			'ntf_modular/sound/interactions/oral1.ogg', \
+			'ntf_modular/sound/interactions/oral2.ogg' \
+		), 25, TRUE, 7, ignore_walls = FALSE)
 	else
-		playsound(src, pick('ntf_modular/sound/misc/mat/guymouth (1).ogg','ntf_modular/sound/misc/mat/guymouth (2).ogg','ntf_modular/sound/misc/mat/guymouth (3).ogg','ntf_modular/sound/misc/mat/guymouth (4).ogg','ntf_modular/sound/misc/mat/guymouth (5).ogg'), 35, TRUE, 7, ignore_walls = FALSE)
+		playsound(src, pick( \
+			'ntf_modular/sound/misc/mat/guymouth (1).ogg', \
+			'ntf_modular/sound/misc/mat/guymouth (2).ogg', \
+			'ntf_modular/sound/misc/mat/guymouth (3).ogg', \
+			'ntf_modular/sound/misc/mat/guymouth (4).ogg', \
+			'ntf_modular/sound/misc/mat/guymouth (5).ogg', \
+			'ntf_modular/sound/interactions/guymouth (1).ogg', \
+			'ntf_modular/sound/interactions/guymouth (2).ogg', \
+			'ntf_modular/sound/interactions/guymouth (3).ogg', \
+			'ntf_modular/sound/interactions/guymouth (4).ogg', \
+			'ntf_modular/sound/interactions/guymouth (5).ogg', \
+			'ntf_modular/sound/interactions/bj1.ogg', \
+			'ntf_modular/sound/interactions/bj2.ogg', \
+			'ntf_modular/sound/interactions/bj3.ogg', \
+			'ntf_modular/sound/interactions/bj4.ogg', \
+			'ntf_modular/sound/interactions/bj5.ogg', \
+			'ntf_modular/sound/interactions/bj6.ogg', \
+			'ntf_modular/sound/interactions/bj7.ogg', \
+			'ntf_modular/sound/interactions/bj8.ogg', \
+			'ntf_modular/sound/interactions/bj9.ogg', \
+			'ntf_modular/sound/interactions/bj10.ogg', \
+			'ntf_modular/sound/interactions/bj11.ogg' \
+		), 35, TRUE, 7, ignore_walls = FALSE)
 
 /mob/living/proc/get_highest_grab_state_on(mob/living/victim)
 	if(victim.pulledby == src)
