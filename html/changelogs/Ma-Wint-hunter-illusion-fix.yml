@@ -1,0 +1,4 @@
+author: Ma-Wint
+delete-after: True
+changes:
+  - bugfix: "Hunter and Assassin mirage illusions now react to humans: they chase whoever they see and swing at them with a visible slash, but only point blank, dealing no damage and only playing hit sounds."
