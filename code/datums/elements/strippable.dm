@@ -387,7 +387,8 @@
 		for(var/section in strippable.layout)
 			var/section_result = list()
 
-			for(var/datum/strippable_item_layout/slot as() in section)
+			// `as()` breaks on BYOND 516.1682 (fixed in 516.1683), `as anything` compiles on every version
+			for(var/datum/strippable_item_layout/slot as anything in section)
 				section_result += list(list(
 					"id" = slot.key,
 					"indented" = slot.indented,
